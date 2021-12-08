@@ -13,7 +13,7 @@ class RequestTest extends TestCase
         $now = new \DateTimeImmutable();
         $token = new ResetToken('token', $now->modify('+1 day'));
 
-        $user = (new UserBuilder())->viaEmail()->build();
+        $user = (new UserBuilder())->viaEmail()->confirmed()->build();
 
         $user->requestPasswordReset($token, $now);
 
@@ -25,7 +25,7 @@ class RequestTest extends TestCase
         $now = new \DateTimeImmutable();
         $token = new ResetToken('token', $now->modify('+1 day'));
 
-        $user = (new UserBuilder())->viaEmail()->build();
+        $user = (new UserBuilder())->viaEmail()->confirmed()->build();
 
         $user->requestPasswordReset($token, $now);
 
@@ -37,7 +37,7 @@ class RequestTest extends TestCase
     {
         $now = new \DateTimeImmutable();
 
-        $user = (new UserBuilder())->viaEmail()->build();
+        $user = (new UserBuilder())->viaEmail()->confirmed()->build();
 
         $token1 = new ResetToken('token', $now->modify('+1 day'));
         $user->requestPasswordReset($token1, $now);
