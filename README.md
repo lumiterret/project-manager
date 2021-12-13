@@ -2,11 +2,10 @@
 
 ## Запуск и использование
 
-Запуск производится через последовательность команд:
+Запуск производится командой:
 
 ```bash
-make dev-build
-make dev-up
+make init
 ```
 Для запуска команд внутри контейнера:
 
@@ -21,3 +20,6 @@ docker-compose run --rm manager-php-cli composer -v
 ```bash
 REGISTRY_ADDRESS=registry IMAGE_TAG=0 make build-production
 ```
+Для доступа к сайту в девелоперском режиме с помощью фикстуры генерируется пользователь:
+login: `admin@app.test`
+pass: `password`
