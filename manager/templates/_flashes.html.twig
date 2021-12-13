@@ -1,16 +1,10 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Sign Up{% endblock %}
-
-{% block body %}
-
-    <h1>Sign Up</h1>
-
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Sign Up</button>
+{% for message in app.flashes('success') %}
+    <div class="alert alert-success">
+        {{ message }}
     </div>
-    {{ form_end(form) }}
-
-{% endblock %}
+{% endfor %}
+{% for message in app.flashes('error') %}
+    <div class="alert alert-danger">
+        {{ message }}
+    </div>
+{% endfor %}
