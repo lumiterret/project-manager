@@ -23,12 +23,9 @@
     </button>
     <ul class="nav navbar-nav ml-auto mr-4">
         <li class="nav-item mr-3">
-            <a class="nav-link nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link nav-link" href="{{ path('profile') }}">
                 {{ app.user.username }}
             </a>
-        </li>
-        <li class="nav-item mr-3">
-            <a class="nav-link nav-link" href="#">Account</a>
         </li>
         <li class="nav-item">
             <a class="nav-link nav-link" href="{{ path('app_logout') }}"><i class="fa fa-lock"></i> Logout</a>
