@@ -14,6 +14,9 @@ docker-compose run --rm <имя контейнера> <команда>
 
 # Пример:
 docker-compose run --rm manager-php-cli composer -v
+
+# установка дополнительных модулей node
+docker-compose run --rm manager-node yarn add -s @coreui/coreui font-awesome perfect-scrollbar simple-line-icons
 ```
 Для продакшн сборки нужно установить переменные окружения:
 
