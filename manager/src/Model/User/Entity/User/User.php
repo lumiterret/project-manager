@@ -281,4 +281,9 @@ class User
             $this->resetToken = null;
         }
     }
+
+    public function getStatus(): string
+    {
+        return $this->status;
+    }
 }
