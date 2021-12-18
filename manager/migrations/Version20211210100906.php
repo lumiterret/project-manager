@@ -34,7 +34,6 @@ final class Version20211210100906 extends AbstractMigration
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('CREATE SCHEMA public');
         $this->addSql('ALTER TABLE user_user_networks DROP CONSTRAINT FK_D7BAFD7BA76ED395');
         $this->addSql('DROP TABLE user_user_networks');
         $this->addSql('DROP TABLE user_users');

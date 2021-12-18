@@ -35,7 +35,6 @@ final class Version20211217063534 extends AbstractMigration
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('CREATE SCHEMA public');
         $this->addSql('ALTER TABLE user_users DROP new_email');
         $this->addSql('ALTER TABLE user_users DROP new_email_token');
         $this->addSql('ALTER TABLE user_users ALTER id TYPE UUID');
