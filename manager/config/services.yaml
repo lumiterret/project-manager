@@ -17,7 +17,6 @@ services:
         resource: '../src/'
         exclude:
             - '../src/DependencyInjection/'
-            - '../Model/User/Entity/'
             - '../src/Kernel.php'
             - '../src/Tests/'
 
@@ -54,3 +53,6 @@ services:
     App\Widget\:
         resource: '../src/Widget'
         tags: ['twig.extension']
+
+    Symfony\Component\HttpFoundation\Session\Session:
+        alias: Symfony\Component\HttpFoundation\Session\SessionInterface
