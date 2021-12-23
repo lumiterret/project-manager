@@ -49,6 +49,9 @@ manager-assets-dev:
 manager-test:
 	docker-compose run --rm manager-php-cli php bin/phpunit
 
+cache-clear:
+	docker-compose run --rm manager-php-cli php bin/console cache:clear
+
 build-production:
 	docker build --pull --file=manager/docker/production/nginx.docker --tag ${REGISTRY_ADDRESS}/manager-nginx:${IMAGE_TAG} manager
 	docker build --pull --file=manager/docker/production/php-fpm.docker --tag ${REGISTRY_ADDRESS}/manager-php-fpm:${IMAGE_TAG} manager
