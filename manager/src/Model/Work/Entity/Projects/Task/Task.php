@@ -2,8 +2,10 @@
 
 namespace App\Model\Work\Entity\Projects\Task;
 
+use App\Model\Work\Entity\Members\Member\Id as MemberId;
 use App\Model\Work\Entity\Members\Member\Member;
 use App\Model\Work\Entity\Projects\Project\Project;
+use Doctrine\Common\Collections\ArrayCollection;
 use Webmozart\Assert\Assert;
 
 class Task
@@ -20,6 +22,7 @@ class Task
     private $priority;
     private $parent;
     private $status;
+    private $executors;
 
     public function __construct(
         Id $id,
@@ -42,6 +45,7 @@ class Task
         $this->type = $type;
         $this->priority = $priority;
         $this->status = Status::new();
+        $this->executors = new ArrayCollection();
     }
 
     public function edit(string $name, ?string $content): void
@@ -112,6 +116,35 @@ class Task
         $this->priority = $priority;
     }
 
+    public function hasExecutor(MemberId $id): bool
+    {
+        foreach ($this->executors as $executor) {
+            if ($executor->getId()->isEqual($id)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function assignExecutor(Member $executor): void
+    {
+        if ($this->executors->contains($executor)) {
+            throw new \DomainException('Executor is already assigned.');
+        }
+        $this->executors->add($executor);
+    }
+
+    public function revokeExecutor(MemberId $id): void
+    {
+        foreach ($this->executors as $current) {
+            if ($current->getId()->isEqual($id)) {
+                $this->executors->removeElement($current);
+                return;
+            }
+        }
+        throw new \DomainException('Executor is not assigned.');
+    }
+
     public function isNew(): bool
     {
         return $this->status->isNew();
@@ -175,5 +208,13 @@ class Task
     public function getStatus(): Status
     {
         return $this->status;
+    }
+
+    /**
+     * @return Member[]
+     */
+    public function getExecutors(): array
+    {
+        return $this->executors->toArray();
     }
 }
