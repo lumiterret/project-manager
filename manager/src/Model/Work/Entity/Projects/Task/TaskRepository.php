@@ -32,6 +32,11 @@ class TaskRepository
         $this->repo->persist($task);
     }
 
+    public function remove(Task $task): void
+    {
+        $this->em->remove($task);
+    }
+
     public function nextId(): Id
     {
         return new Id((int)$this->connection->query('SELECT nextval(\'work_projects_tasks_seq\')')->fetchColumn());
