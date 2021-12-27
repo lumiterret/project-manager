@@ -38,7 +38,7 @@ class TaskRepository
 
     public function add(Task $task): void
     {
-        $this->repo->persist($task);
+        $this->em->persist($task);
     }
 
     public function remove(Task $task): void

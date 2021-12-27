@@ -18,9 +18,11 @@ class Command
      */
     public $member;
     /**
+     * @var NameRow[]
      * @Assert\NotBlank()
+     * @Assert\Valid()
      */
-    public $name;
+    public $names;
     /**
      * @var string
      */
