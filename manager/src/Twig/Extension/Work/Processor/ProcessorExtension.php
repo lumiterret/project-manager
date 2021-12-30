@@ -5,7 +5,6 @@ namespace App\Twig\Extension\Work\Processor;
 use App\Twig\Extension\Work\Processor\Driver\Driver;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
-use Webmozart\Assert\Assert;
 
 class ProcessorExtension extends AbstractExtension
 {
@@ -14,9 +13,8 @@ class ProcessorExtension extends AbstractExtension
      */
     private $drivers;
 
-    public function __construct(array $drivers)
+    public function __construct(iterable $drivers)
     {
-        Assert::allIsInstanceOf($drivers, Driver::class);
         $this->drivers = $drivers;
     }
 
