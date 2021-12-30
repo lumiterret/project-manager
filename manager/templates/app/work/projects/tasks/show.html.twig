@@ -125,7 +125,7 @@
                     </tr>
                     <tr>
                         <th>Create Date</th>
-                        <td>{{ task.date|date('Y-m-d') }}</td>
+                        <td>{{ task.date|date('Y-m-d H:i:s') }}</td>
                         <th>Plan Date</th>
                         <td>
                             {{ task.planDate ? task.planDate|date('Y-m-d') : '' }}
