@@ -3,7 +3,6 @@ down: docker-down
 restart: docker-down docker-up
 init: docker-down-clear manager-clear docker-pull docker-build docker-up manager-init
 test: manager-test
-test-unit: manager-test-unit
 
 docker-up:
 	docker-compose up -d
@@ -52,9 +51,6 @@ manager-test:
 
 cache-clear:
 	docker-compose run --rm manager-php-cli php bin/console cache:clear
-
-manager-test-unit:
-	docker-compose run --rm manager-php-cli php bin/phpunit --testsuite=unit
 
 build-production:
 	docker build --pull --file=manager/docker/production/nginx.docker --tag ${REGISTRY_ADDRESS}/manager-nginx:${IMAGE_TAG} manager
