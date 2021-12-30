@@ -18,7 +18,6 @@
         "knplabs/knp-menu-bundle": "^3.2",
         "knplabs/knp-paginator-bundle": "^5.3",
         "knpuniversity/oauth2-client-bundle": "^2.9",
-        "league/flysystem-bundle": "^2.1",
         "league/oauth2-facebook": "^2.0",
         "phpdocumentor/reflection-docblock": "^5.3",
         "predis/predis": "^1.1",
