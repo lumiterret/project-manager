@@ -8,7 +8,7 @@ use App\Tests\Builder\Work\Projects\ProjectBuilder;
 use App\Tests\Builder\Work\Projects\TaskBuilder;
 use PHPUnit\Framework\TestCase;
 
-class PlanTest extends TestCase
+class RemovePlanTest extends TestCase
 {
     public function testSuccess(): void
     {
@@ -20,5 +20,9 @@ class PlanTest extends TestCase
         $task->plan($date = new \DateTimeImmutable());
 
         self::assertEquals($date, $task->getPlanDate());
+
+        $task->removePlan();
+
+        self::assertNull($task->getPlanDate());
     }
 }
