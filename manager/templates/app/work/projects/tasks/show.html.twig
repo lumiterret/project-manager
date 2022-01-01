@@ -49,19 +49,12 @@
         <a href="{{ path('work.projects.project.tasks.create', {'project_id': project.id}) }}?parent={{ task.id }}" class="btn btn-primary">Add
             SubTasks</a>
         <a href="{{ path('work.projects.tasks.edit', {'id': task.id}) }}" class="btn btn-primary">Edit</a>
-        <div class="btn-group">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                More&hellip;
-            </button>
-            <div class="dropdown-menu" x-placement="bottom-start">
-                <a class="dropdown-item" href="{{ path('work.projects.tasks.move', {'id': task.id}) }}">Move To Project&hellip;</a>
-                <a class="dropdown-item" href="{{ path('work.projects.tasks.child', {'id': task.id}) }}">Set As Child Of&hellip;</a>
-                <form class="dropdown-item" action="{{ path('work.projects.tasks.delete', {'id': task.id}) }}" method="post" onsubmit="return confirm('Are you sure?')">
-                    <input type="hidden" name="token" value="{{ csrf_token('delete') }}" />
-                    <button type="submit" class="btn" style="padding: 0">Delete</button>
-                </form>
-            </div>
-        </div>
+        <a class="btn btn-primary" href="{{ path('work.projects.tasks.move', {'id': task.id}) }}">Move To Project&hellip;</a>
+        <a class="btn btn-primary" href="{{ path('work.projects.tasks.child', {'id': task.id}) }}">Set As Child Of&hellip;</a>
+        <form class="btn btn-danger" action="{{ path('work.projects.tasks.delete', {'id': task.id}) }}" method="post" onsubmit="return confirm('Are you sure?')">
+            <input type="hidden" name="token" value="{{ csrf_token('delete') }}" />
+            <button type="submit" class="btn" style="padding: 0">Delete</button>
+        </form>
     </div>
 
     {% if children %}
