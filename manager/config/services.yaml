@@ -82,3 +82,6 @@ services:
 
     App\Twig\Extension\Work\Processor\ProcessorExtension:
         arguments: [!tagged app.twig.work_processor.driver]
+
+    App\Model\EventDispatcher:
+        class: App\Event\Dispatcher\MessengerEventDispatcher
