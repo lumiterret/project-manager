@@ -34,6 +34,6 @@ class Handler
             $task->assignExecutor($actor, new \DateTimeImmutable(), $actor);
         }
 
-        $this->flusher->flush();
+        $this->flusher->flush($task);
     }
 }

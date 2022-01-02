@@ -29,6 +29,6 @@ class Handler
 
         $task->changeType($actor, new \DateTimeImmutable(), new Type($command->type));
 
-        $this->flusher->flush();
+        $this->flusher->flush($task);
     }
 }
