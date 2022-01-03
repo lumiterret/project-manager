@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "03144de939f3bdbbb4064f478ef5e992",
+    "content-hash": "71e92606a32b9353101d588a0c2c54c3",
     "packages": [
         {
             "name": "brick/math",
@@ -129,6 +129,52 @@
                 "source": "https://github.com/cebe/markdown"
             },
             "time": "2018-03-26T11:24:36+00:00"
+        },
+        {
+            "name": "centrifugal/phpcent",
+            "version": "4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/centrifugal/phpcent.git",
+                "reference": "146734a4c540c278501a8ec72f6447b14c99cd82"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/centrifugal/phpcent/zipball/146734a4c540c278501a8ec72f6447b14c99cd82",
+                "reference": "146734a4c540c278501a8ec72f6447b14c99cd82",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "9.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "phpcent\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHP library to communicate with Centrifugo HTTP API",
+            "homepage": "https://github.com/centrifugal/phpcent",
+            "keywords": [
+                "centrifugo",
+                "messaging",
+                "realtime",
+                "websocket"
+            ],
+            "support": {
+                "issues": "https://github.com/centrifugal/phpcent/issues",
+                "source": "https://github.com/centrifugal/phpcent/tree/v4.0.0"
+            },
+            "time": "2021-09-06T13:13:39+00:00"
         },
         {
             "name": "composer/package-versions-deprecated",
@@ -11497,5 +11543,5 @@
         "ext-pdo": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }
